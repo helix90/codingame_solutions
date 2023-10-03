@@ -19,7 +19,8 @@ func max_height(mountains []int64) int {
 func print_mountains(mountains []string) {
 	// Print the entries in the map of the mountains
 	for _, val := range mountains {
-		fmt.Println(val)
+		// Remember to trim the trailing spaces
+		fmt.Println(strings.TrimRight(val, " "))
 	}
 }
 
@@ -29,7 +30,8 @@ func build_output(mountains []int64) []string {
 	ret_val := []string{}
 	var counter int
 	// Layer must be external to the loop for scope reasons
-	// Not a MAP, use a Slice for this.
+	// Do no use a MAP, use a Slice.
+	// Maps are not ordered, and order matters here.
 	var layer []string
 	for altitude := max_height; altitude > 0; altitude-- {
 		// Altitude of this pass, from highest to lowest
