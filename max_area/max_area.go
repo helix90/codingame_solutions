@@ -10,7 +10,6 @@ func volume(x int, y1, y2 int) int {
 	} else {
 		return x * y2
 	}
-	return 0
 }
 
 func process_array(array []int) int {
